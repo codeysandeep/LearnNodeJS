@@ -1,4 +1,4 @@
-// How does Asynchronous Programming works in Node JS
+// How does Synchronous Programming works in Node JS
 
 const apple = (callback) => {
   console.log("A for Apple");
