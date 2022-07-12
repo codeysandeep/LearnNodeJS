@@ -1,4 +1,6 @@
-const readline = require("readline");
+// Command Line ToDoList with Node JS
+
+import readline from "readline";
 
 const readlineInterface = readline.createInterface(
   process.stdin,
@@ -8,13 +10,13 @@ const readlineInterface = readline.createInterface(
 const ToDoList = [];
 
 const commands = {
-  view: function () {
+  view: () => {
     console.log(ToDoList);
   },
-  add: function (ToDo) {
+  add: (ToDo) => {
     ToDoList.push(ToDo);
   },
-  remove: function (ToDo) {
+  remove: (ToDo) => {
     for (let index = 0; index < ToDoList.length; index++) {
       if (ToDoList[index] === ToDo) {
         ToDoList.splice(index, 1);
@@ -26,7 +28,7 @@ const commands = {
 readlineInterface.setPrompt(">> ");
 readlineInterface.prompt();
 
-readlineInterface.on("line", function (line) {
+readlineInterface.on("line", (line) => {
   const words = line.split(" ");
   const command = words.shift();
   const ToDo = words.join(" ");
